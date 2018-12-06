@@ -1,5 +1,9 @@
 # Readme
 
+The concept is to remove noise from a black and white images. Such as :
+
+![example of results](doc/example.png)
+
 ## How to run
 
 ### Training
@@ -30,6 +34,8 @@ glowing-spoon --train=False --test=True
 
  * The measurement is the structural similarity from scikit-learn. The mean value is about 0.80 over the whole images.
 
- * I didn't have enough time to performe cross-validation neather k-fold validation and to port the code on GPU.
+## TODO :
 
- * This isn't a perfect tool, there is a lot of improvement that can be done. It's not very stable and this code is mostly a proof of concept of your "research question".
+ * cross-validation nor k-fold validation
+ * port the code on GPU.
+ * This isn't a perfect tool, there is a lot of improvement that can be done. It's not very stable and this code is mostly a proof of concept on a "research question".
