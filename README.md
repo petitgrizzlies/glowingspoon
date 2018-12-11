@@ -9,14 +9,14 @@ The concept is to remove noise from a black and white images. Such as :
 ### Training
 
 The following command will train your neural network from scratch on 10 epochs. On my computer it takes around 40s each epoch :
-```python
+```bash
 glowing-spoon --train=True --save_nn="model.pth" --epochs=10
 ```
 
 ### Testing
 
 In order to test, you need to specify the testing flag and some images to test. For example :
-```python
+```bash
 glowing-spoon --train=False --test=True
     --x_test="/new/path/folder/test/modified/"
     --y_test="/new/path/folder/test/original/"
@@ -27,7 +27,7 @@ glowing-spoon --train=False --test=True
 ## Remarks
 
  * By running : 
-   ```python
+   ```bash
     glowing-spoon --help
     ```
     you will recieve a lot of indication and the default values for each parameters.
