@@ -2,3 +2,5 @@
 venv/
 dist/
 *.pdf
+__pycache__/
+.python-version
