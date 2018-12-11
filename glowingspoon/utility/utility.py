@@ -3,11 +3,11 @@ import os
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import numpy as np
-import distutils
+from distutils.util import strtobool
 
 
 def boolean(x):
-    return bool(distutils.util.strtobool(x))
+    return bool(strtobool(x))
 
 
 def programme_parameters():
