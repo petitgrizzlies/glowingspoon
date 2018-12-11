@@ -36,6 +36,7 @@ glowing-spoon --train=False --test=True
 
 ## TODO :
 
+ * correct torch error
  * change the files to make the pip installation runing out of box
  * cross-validation nor k-fold validation
  * port the code on GPU.
