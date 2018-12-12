@@ -37,7 +37,7 @@ glowingspoon --train=False --test=True
 ## TODO :
 
  * correct torch error
- * change the files to make the pip installation runing out of box
+ * fix the `poetry run glowingspoon` that doesnt work.
  * cross-validation nor k-fold validation
  * port the code on GPU.
  * This isn't a perfect tool, there is a lot of improvement that can be done. It's not very stable and this code is mostly a proof of concept on a "research question".
