@@ -1,10 +1,11 @@
-from model.train import train
-from model.test import test
-from model.ConvNet import ConvNet
-from utility.utility import programme_parameters
+from glowingspoon.model.train import train
+from glowingspoon.model.test import test
+from glowingspoon.model.ConvNet import ConvNet
+from glowingspoon.utility.utility import programme_parameters
 import torch
 
-if __name__ == "__main__":
+
+def core():
     args = programme_parameters()
 
     if args.load_nn:
@@ -19,3 +20,7 @@ if __name__ == "__main__":
 
     if args.test:
         test(model, args)
+
+
+if __name__ == "__main__":
+    core()
