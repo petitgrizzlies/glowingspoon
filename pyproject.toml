@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "glowing-spoon"
+name = "glowingspoon"
 version = "0.1.0"
 description = ""
 license = "MIT"
@@ -20,6 +20,9 @@ torch = "^1.0"
 pytest = "^3.0"
 ipython = "^7.2"
 ipdb = "^0.11.0"
+
+[tool.poetry.scripts]
+glowingspoon = 'glowingspoon:_main.core'
 
 [build-system]
 requires = ["poetry>=0.12"]
