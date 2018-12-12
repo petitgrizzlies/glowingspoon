@@ -10,7 +10,8 @@ The concept is to remove noise from a black and white images. Such as :
 
 The following command will train your neural network from scratch on 10 epochs. On my computer it takes around 40s each epoch :
 ```bash
-glowingspoon --train=True --save_nn="model.pth" --epochs=10
+glowingspoon --train=True --train_x="my/path/modified" --train_y="my/path/original/"
+    --save_nn="model.pth" --epochs=10
 ```
 
 ### Testing
@@ -18,8 +19,8 @@ glowingspoon --train=True --save_nn="model.pth" --epochs=10
 In order to test, you need to specify the testing flag and some images to test. For example :
 ```bash
 glowingspoon --train=False --test=True
-    --x_test="/new/path/folder/test/modified/"
-    --y_test="/new/path/folder/test/original/"
+    --test_x="/new/path/folder/test/modified/"
+    --test_y="/new/path/folder/test/original/"
     --load_nn="model.pth"
     --print_example=True
 ```
@@ -36,8 +37,6 @@ glowingspoon --train=False --test=True
 
 ## TODO :
 
- * correct torch error
- * fix the `poetry run glowingspoon` that doesnt work.
  * cross-validation nor k-fold validation
  * port the code on GPU.
  * This isn't a perfect tool, there is a lot of improvement that can be done. It's not very stable and this code is mostly a proof of concept on a "research question".
