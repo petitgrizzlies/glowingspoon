@@ -1,4 +1,4 @@
-from utility.utility import load_images, split_into_block
+from glowingspoon.utility.utility import load_images, split_into_block
 import torch
 from skimage.measure import compare_ssim as ssim
 from tqdm import tqdm

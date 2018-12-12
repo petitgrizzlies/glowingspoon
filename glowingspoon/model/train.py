@@ -1,5 +1,5 @@
-from utility.utility import load_images, split_into_block
-from model.ImageDataset import ImageDataset
+from glowingspoon.utility.utility import load_images, split_into_block
+from glowingspoon.model.ImageDataset import ImageDataset
 from torch.utils.data import DataLoader
 import torch
 from tqdm import tqdm
