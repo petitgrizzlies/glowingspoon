@@ -1,7 +1,6 @@
-from glowingspoon.model.train import train
-from glowingspoon.model.test import test
-from glowingspoon.model.ConvNet import ConvNet
-from glowingspoon.utility.utility import programme_parameters
+from .ml import train, test
+from .model import ConvNet
+from .utility import programme_parameters
 import torch
 
 
