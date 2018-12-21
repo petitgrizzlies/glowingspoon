@@ -48,7 +48,7 @@ def train(model, args, batch_size=1000):
         running_loss = 0.0
 
     if args.save_nn:
-        torch.save(model, args.save_nn)
+        torch.save(model.state_dict(), args.save_nn)
 
     return model
 
