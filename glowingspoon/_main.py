@@ -6,6 +6,8 @@ import torch
 
 def core():
     args = programme_parameters()
+    # define to use cuda if available
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     model = ConvNet(args.size_block)
     if args.load_nn:
@@ -14,10 +16,10 @@ def core():
         model.eval()
 
     if args.train:
-        model = train(model, args)
+        model = train(model, args, device)
 
     if args.test:
-        test(model, args)
+        test(model, args, device)
 
 
 if __name__ == "__main__":
