@@ -37,6 +37,5 @@ glowingspoon --train=False --test=True
 
 ## TODO :
 
- 1. port the code on GPU.
  1. cross-validation nor k-fold validation
- 1. This isn't a perfect tool, there is a lot of improvement that can be done. It's not very stable and this code is mostly a proof of concept on a "research question".
+ 2. This isn't a perfect tool, there is a lot of improvement that can be done. It's not very stable and this code is mostly a proof of concept on a "research question".

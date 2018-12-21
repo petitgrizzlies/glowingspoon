@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def train(model, args, batch_size=1000):
+def train(model, args, device, batch_size=1000):
 
     X, y = load_images(args.train_x, args.train_y)
 
@@ -17,8 +17,8 @@ def train(model, args, batch_size=1000):
 
     # we reshape the matrix to match the neural network input.
     shape = new_X.shape
-    new_X = torch.Tensor(new_X).reshape(shape[0], 1, shape[1], shape[2])
-    new_y = torch.Tensor(new_y).reshape(shape[0], 1, shape[1], shape[2])
+    new_X = torch.Tensor(new_X, device=device).reshape(shape[0], 1, shape[1], shape[2])
+    new_y = torch.Tensor(new_y, device=device).reshape(shape[0], 1, shape[1], shape[2])
 
     # define the optimizer and the loss
     criterion = torch.nn.MSELoss()
@@ -33,7 +33,7 @@ def train(model, args, batch_size=1000):
         running_loss = 0.0
         for index, data in enumerate(dataloader):
 
-            y_pred = model(data["features"])
+            y_pred = model(data["features"]).to(device)
 
             loss = criterion(y_pred, data["classe"])
 
@@ -53,7 +53,7 @@ def train(model, args, batch_size=1000):
     return model
 
 
-def test(model, args):
+def test(model, args, device):
     X, y = load_images(args.test_x, args.test_y)
     y = y / y.max().astype(np.float32)
 
@@ -68,7 +68,9 @@ def test(model, args):
         shape = splited_x.shape
         # apply model
         guessed_y = model(
-            torch.Tensor(splited_x).reshape(shape[0], 1, shape[1], shape[2])
+            torch.Tensor(splited_x, device=device).reshape(
+                shape[0], 1, shape[1], shape[2]
+            )
         ).reshape(shape_image[0], shape_image[0])
         # get the new image
         guessed_y = guessed_y.detach().numpy()
