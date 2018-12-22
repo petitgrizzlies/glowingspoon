@@ -1,5 +1,5 @@
-from utility import load_images, split_into_block
-from model import ImageDataset
+from .utility import load_images, split_into_block
+from .model import ImageDataset
 from torch.utils.data import DataLoader
 import torch
 from skimage.measure import compare_ssim as ssim
